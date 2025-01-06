@@ -1,0 +1,95 @@
+node_modules/
+
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+function Navbar() {
+  const [userLocal, setUserLocal] = useState(null);
+
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      setUserLocal(JSON.parse(user));
+    }
+  }, []);
+
+  return (
+    <>
+      {userLocal && (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#">Navbar</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <a className="nav-link" href="#">Features</a>
+                <a className="nav-link" href="#">Pricing</a>
+                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+              </div>
+              <span className="navbar-text">
+                Bienvenido, {userLocal.nombre}
+              </span>
+            </div>
+          </div>
+        </nav>
+      )}
+    </>
+  );
+}
+
+export default Navbar;
+
+
+https://github.com/martoblue/ecospark/blob/main/frontend/src/layouts/login-signup/Login.jsx
+
+
+ const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.location.reload();
+  };
+
+<div className='Desconectar-sesion'>
+                  <button
+                    type='button'
+                    className='btn btn-primary'
+                    onClick={handleLogout}
+                  >
+                    Desconectar
+                  </button>
+                </div>
+
+                .Desconectar-sesion {
+  text-align: right;
+}

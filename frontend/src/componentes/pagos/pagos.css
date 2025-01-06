@@ -1,0 +1,79 @@
+
+
+.nav-item{
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+.bg-warning{
+  border-radius: 5px;
+}
+
+.bg-warning:hover{
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-nav{
+  margin-left: 270px;
+}
+
+.fon{
+  background-color:  #066e4f;
+  padding-top: 20px;
+}
+
+.bg-dark {
+  color: white;
+  
+  border-radius: 5px;
+}
+
+.bg-dark:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+.color1{
+color: white;
+
+
+}
+
+.color2{
+color: white;
+
+
+}
+
+
+.cambio{
+text-decoration: none;
+}
+
+
+.remove{
+    font-size: 20px;
+ 
+}
+
+.remove:hover{
+  cursor: pointer;
+ 
+}
+
+.fon{
+    background-color:  #066e4f;
+    padding-top: 20px;
+}
+
+
+.text-white:hover{
+   background: #1a286a;
+   border-radius: 10px;
+   
+}
+
+.toFixed{
+   background-color: blue;
+}

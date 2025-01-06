@@ -1,0 +1,9 @@
+"npm init -y" solo para los paquetes principales
+
+npm i express dotenv morgan bcrypt jsonwebtoken mongoose
+
+npm i -D nodemon
+
+Post http://localhost:8080/api/v1/crear/ para Probar base de datos
+
+npm install cors

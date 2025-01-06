@@ -1,0 +1,22 @@
+.volver{
+    color: white;
+    background: black;
+    border-radius: 6px;
+     margin-left: 120px;
+    margin-top: 5px;
+    width: 100px;
+   
+}
+
+.volver:hover{
+    color: fuchsia;
+    border: 2px solid rgb(227, 6, 227);
+}
+
+.registro{
+    font-size: 25px;
+    margin-top: -25px;
+    margin-bottom: 30px;
+}
+
+
