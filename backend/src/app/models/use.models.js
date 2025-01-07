@@ -9,8 +9,7 @@ const userSchema = new Schema({
     direction:String,
     email: String,
     password:String,
-    comune:String,
-    region:String,
+  
     status: {
       type: String,
       enum:["active", "inactive"],

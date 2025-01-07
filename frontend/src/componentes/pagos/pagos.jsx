@@ -4,12 +4,13 @@ import './pagos.css';
 import Img1 from '../../assets/img2/img1.png';
 import axios from 'axios';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Inicialización de Mercado Pago
 initMercadoPago('APP_USR-c7b9fa30-af3f-4739-8970-834a2903a533', { locale: 'es-CL' });
 
 const Pagos = () => {
+  const navigate = useNavigate();
   const userLoggin = localStorage.getItem('user');
   let userData = null;
 
@@ -28,7 +29,6 @@ const Pagos = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const paymentsPerPage = 6;
   const [cartDisabled, setCartDisabled] = useState(JSON.parse(localStorage.getItem(`${userName}_cartDisabled`)) || {});
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,6 +45,12 @@ const Pagos = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (userLoggin === null) {
+      navigate('/login'); // Redirect to login page if not logged in
+    }
+  }, [userLoggin, navigate]);
 
   useEffect(() => {
     localStorage.setItem(`${userName}_products`, JSON.stringify(products));
@@ -223,7 +229,7 @@ const Pagos = () => {
                     <a className="nav-link text-white" href="#" data-toggle="modal" data-target="#debtDetailModal">Ver Pagos ${totalDebt.toFixed(2)}</a>
                   </li>
                   <li className="nav-item">
-                  <Link to="/"lassName="nav-link text-white">Regresar</Link>
+                  <Link to="/" className="nav-link text-white">Regresar</Link>
                   </li>
                 </>
               ) : (
@@ -234,8 +240,8 @@ const Pagos = () => {
           </div>
         </nav>
 
-        <div className="container mt-4">
-          <h1>Agregar Producto</h1>
+        <div className="container mt-4 pt-4">
+          <h1 className="mt-4 pt-4">Agregar Producto</h1>
           <form id="productForm" onSubmit={handleProductFormSubmit}>
             <div className="form-group">
               <label htmlFor="imageInput">Seleccionar imagen:</label>

@@ -40,12 +40,8 @@ function Section() {
               <div className="hero__text ">
                 <h1 className="hero__title ">Paga tus cuentas</h1>
                 <p className="hero__description">De forma directa, fácil y sencilla.</p>
-                <Link to="/pagos">
-
+                <Link to="/productosAgregados">
                 <button className="btn btn-primary">Pago rápido</button>
-
-                <button className="btn btn-primary ">Pago rápido</button>
-
                 </Link>
               </div>
             </div>

@@ -12,7 +12,9 @@ import Footer from '../footer/footer.jsx';
 import Root from '../../root.jsx';
 import Pagos from '../pagos/pagos.jsx';
 import ProductosAgregados from '../pagos/productosAgregados.jsx';
-import Ayuda from '../main1/ayuda.jsx';
+import Ayuda from '../ayuda/ayuda.jsx';
+import AyudaAdministrador from '../ayuda/ayudaAdminitrador.jsx';
+import MainAdministrador from '../main/main.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,8 +54,8 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: '/main',
-    element: <Main />,
+    path: '/mainAdministrador',
+    element: <MainAdministrador />,
   },
   {
     path: '/ayuda',
@@ -66,13 +68,19 @@ const router = createBrowserRouter([
 
 
   {
-    path: '/pagos',
+    path: '/pagosAdministrador',
     element: <Pagos/>,
   },
 
   {
     path: '/productosAgregados',
     element: <ProductosAgregados/>,
+    
+  },
+
+  {
+    path: '/ayudaAdministrador',
+    element: <AyudaAdministrador/>,
     
   },
 

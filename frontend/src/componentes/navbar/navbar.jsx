@@ -55,11 +55,9 @@ function Navbar() {
                   <li className="nav-item">
                     <span className="nav-link text-white">Hola {userName} {userlastName}❤</span>
                   </li>
+                 
                   <li className="nav-item">
-                    <Link to="" className="nav-link text-white">Mi Cuenta</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/pagos" className="nav-link text-white">Pagos</Link>
+                    <Link to="/ProductosAgregados" className="nav-link text-white">Pagos</Link>
                   </li>
                   <li className="nav-item">
                     <Link to="/ayuda" className="nav-link text-white">Ayuda</Link>

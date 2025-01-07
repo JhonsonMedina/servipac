@@ -1,11 +1,27 @@
 import React from "react";
 import Servi1 from '../../assets/img2/servi1.png';
 import './main2.css';
- import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import  {  useEffect } from "react";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
  
 function Main2 (){
+
+  const navigate = useNavigate();
+      const userLoggin = localStorage.getItem('user');
+      let userData = null;
+    
+      if (userLoggin !== null) {
+        userData = JSON.parse(userLoggin);
+      }
+  
+  
+        useEffect(() => {
+          if (userLoggin === null) {
+            navigate('/login'); // Redirect to login page if not logged in
+          }
+        }, [userLoggin, navigate]);
 
     return(
 
@@ -23,9 +39,9 @@ function Main2 (){
     <div className="col-md-8">
       <div className="card-body">
         <h5 className="card-title text-center">!!!!!  HEMOS ENVIANDO SU COMENTARIO  !!!!</h5>
-        <h5 className="card-title text-center">LO CONTACTAREMOS A LA BREVEDAS</h5>
+        <h5 className="card-title text-center">LO CONTACTAREMOS A LA BREVEDAD</h5>
        
-        <Link to="/main" className="footer-link">
+        <Link to="/" className="footer-link">
         <div className="text-center">
         <button type="button" className="btn btn-warning mt-4 p-2 ">
          Regresar

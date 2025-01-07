@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
+
 .color1{
   color: white;
 
@@ -60,19 +60,18 @@
 }
 
 
-=======
+
 .color{
     color: white;
     
 }
 
->>>>>>> cd3b88b87ddda9d32ac4623e782f27e759ffd73e
+
 .cambio{
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
+
 /* navbar.css */
 .nav-link {
   text-decoration: none !important; /* Eliminar subrayado */
@@ -83,4 +82,3 @@
 .nav-link:hover {
   color: #cccccc; /* Cambia este color al que desees para el hover */
 }
->>>>>>> cd3b88b87ddda9d32ac4623e782f27e759ffd73e

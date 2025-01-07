@@ -8,6 +8,7 @@ function Registro() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [region, setRegion] = useState('');
+  const [direction , setDirection] = useState('');
   const [comune, setComune] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,6 +30,7 @@ function Registro() {
     const isValid =
       name &&
       lastName &&
+      direction&&
       region &&
       comune &&
       email &&
@@ -38,7 +40,7 @@ function Registro() {
       acceptTerms;
 
     setIsFormValid(isValid);
-  }, [name, lastName, region, comune, email, password, confirmPassword, passwordError, acceptTerms]);
+  }, [name, lastName, region,direction, comune, email, password, confirmPassword, passwordError, acceptTerms]);
 
   const handleSubmit = () => {
     if (!isFormValid) {
@@ -49,6 +51,7 @@ function Registro() {
     const user = {
       name,
       lastName,
+      direction,
       region,
       comune,
       email,
@@ -113,6 +116,16 @@ function Registro() {
               className="form-control"
               placeholder="Apellido"
               onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-3">
+            <input
+              id="direction"
+              type="text"
+              className="form-control"
+              placeholder="direccion"
+              onChange={(e) => setDirection(e.target.value)}
             />
           </div>
 

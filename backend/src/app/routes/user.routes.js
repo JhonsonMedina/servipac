@@ -4,6 +4,7 @@ const {
     loginUser,
     updateStatusUserById,
     updateUserById,
+  
   } = require('../controllers/user.controller');
   const { updateOne } = require('../models/use.models');
   
@@ -15,8 +16,7 @@ const {
   //hacer login
   router.post('/login', loginUser);
   
-  //obtener un usuario por su id
-  
+
   router.get('/getbyid/:iduser', getUserById);
   
   //actualizando estatus del usuario

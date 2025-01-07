@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from "react";
 import * as XLSX from 'xlsx';
 import './main.css';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 
-function Main() {
+function MainAdministrador() {
+    const navigate = useNavigate();
+    const userLoggin = localStorage.getItem('user');
+    let userData = null;
+  
+    if (userLoggin !== null) {
+      userData = JSON.parse(userLoggin);
+    }
+
+
+      useEffect(() => {
+        if (userLoggin === null) {
+          navigate('/login'); // Redirect to login page if not logged in
+        }
+      }, [userLoggin, navigate]);
+
     const [records, setRecords] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const recordsPerPage = 5;
@@ -119,7 +134,7 @@ function Main() {
                             Exportar a Excel
                         </button>
                     </div>
-                    <Link to="/main1" className="footer-link">
+                    <Link to="/ayuda" className="footer-link">
                         <div className="text-center">
                             <button type="button" className="btn btn-warning mt-4 p-2 regresar mb-2">
                                 Regresar
@@ -133,4 +148,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default MainAdministrador;
