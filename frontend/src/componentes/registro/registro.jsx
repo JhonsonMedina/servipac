@@ -7,9 +7,7 @@ function Registro() {
 
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [region, setRegion] = useState('');
   const [direction , setDirection] = useState('');
-  const [comune, setComune] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -31,8 +29,6 @@ function Registro() {
       name &&
       lastName &&
       direction&&
-      region &&
-      comune &&
       email &&
       password &&
       confirmPassword &&
@@ -40,7 +36,7 @@ function Registro() {
       acceptTerms;
 
     setIsFormValid(isValid);
-  }, [name, lastName, region,direction, comune, email, password, confirmPassword, passwordError, acceptTerms]);
+  }, [name, lastName,direction,  email, password, confirmPassword, passwordError, acceptTerms]);
 
   const handleSubmit = () => {
     if (!isFormValid) {
@@ -52,8 +48,6 @@ function Registro() {
       name,
       lastName,
       direction,
-      region,
-      comune,
       email,
       password,
     };
@@ -129,26 +123,6 @@ function Registro() {
             />
           </div>
 
-          <div className="row mb-3">
-            <div className="col-6">
-              <input
-                id="region"
-                type="text"
-                className="form-control"
-                placeholder="Región"
-                onChange={(e) => setRegion(e.target.value)}
-              />
-            </div>
-            <div className="col-6">
-              <input
-                id="comune"
-                type="text"
-                className="form-control"
-                placeholder="Comuna"
-                onChange={(e) => setComune(e.target.value)}
-              />
-            </div>
-          </div>
 
           <div className="mb-3">
             <input
