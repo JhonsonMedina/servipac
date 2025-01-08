@@ -2,13 +2,45 @@ import React, { useState, useEffect } from "react";
 import * as XLSX from 'xlsx';
 import './main.css';
 import { Link,useNavigate } from "react-router-dom";
-import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
+import Img1 from '../../assets/img2/img1.png';
 
 function MainAdministrador() {
+
+   const userLoggin = localStorage.getItem('user');
+     let userData = null;
+   
+     if (userLoggin !== null) {
+       userData = JSON.parse(userLoggin);
+     }
+   
+     const [userName, setUserName] = useState(userData ? userData.name : '');
+     const [userlastName, setUserLastName] = useState(userData ? userData.lastName : '');
+   
+     const [isScrolled, setIsScrolled] = useState(false);
+   
+     useEffect(() => {
+       const handleScroll = () => {
+         if (window.scrollY > 50) {
+           setIsScrolled(true);
+         } else {
+           setIsScrolled(false);
+         }
+       };
+   
+       window.addEventListener('scroll', handleScroll);
+       return () => {
+         window.removeEventListener('scroll', handleScroll);
+       };
+     }, []);
+   
+     const handleLogout = () => {
+       localStorage.removeItem('user');
+       window.location.reload();
+     };
+
     const navigate = useNavigate();
-    const userLoggin = localStorage.getItem('user');
-    let userData = null;
+    
   
     if (userLoggin !== null) {
       userData = JSON.parse(userLoggin);
@@ -92,7 +124,46 @@ function MainAdministrador() {
 
     return (
         <>
-            <Navbar />
+
+         <nav className={`navbar navbar-expand-lg fixed-top fon ${isScrolled ? 'scrolled' : ''}`}>
+                <div className="container-fluid">
+                  <img src={Img1} alt="Logo" className="navbar-brand" />
+        
+                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                  </button>
+                  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul className="navbar-nav ms-auto">
+                      {userLoggin !== null ? (
+                        <>
+                          <li className="nav-item">
+                            <span className="nav-link text-white">Hola {userName} {userlastName}❤</span>
+                          </li>
+                         
+                          <li className="nav-item">
+                            <Link to="/pagosAdministrador" className="nav-link text-white">Pagos</Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link to="/ayudaAdministrador" className="nav-link text-white">Ayuda</Link>
+                          </li>
+                         
+                        </>
+                      ) : (
+                        <>
+                          <li className="nav-item">
+                            <Link to="/registro" className="nav-link ml-3 color1">Registrate</Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link to="/login" className="nav-link ml-3 color2">Login</Link>
+                          </li>
+                        </>
+                      )}
+        
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+           
             <div className="main">
                 <div className="container">
                     <h2 className="text-center bg-warning p-4">Registros</h2>
@@ -134,13 +205,7 @@ function MainAdministrador() {
                             Exportar a Excel
                         </button>
                     </div>
-                    <Link to="/ayuda" className="footer-link">
-                        <div className="text-center">
-                            <button type="button" className="btn btn-warning mt-4 p-2 regresar mb-2">
-                                Regresar
-                            </button>
-                        </div>
-                    </Link>
+                    
                 </div>
             </div>
             <Footer />

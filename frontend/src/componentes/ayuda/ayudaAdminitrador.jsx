@@ -96,11 +96,9 @@ function AyudaAdministrador() {
                   </li>
                 
                   <li className="nav-item">
-                    <Link to="/pagos" className="nav-link text-white">Pagos</Link>
+                    <Link to="/pagosAdministrador" className="nav-link text-white">Pagos</Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="/" className="nav-link text-white">Regresar</Link>
-                  </li>
+                 
 
                 </ul>
               </div>
@@ -112,57 +110,14 @@ function AyudaAdministrador() {
               <div className="form-container pt-4">
                 <h2 className="text-center bg-warning p-4">¡Tiene dudas o algún problema con el pago? Coméntenos por acá!</h2>
                 <form id="registerForm" onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Nombre</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="name"
-                      placeholder="Ingresa tu nombre"
-                      value={userName}
-                      readOnly
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="lastName" className="form-label">Apellido</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="lastName"
-                      placeholder="Ingresa tu apellido"
-                      value={userLastName}
-                      readOnly
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Correo</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      placeholder="Ingresa tu correo"
-                      value={userEmail}
-                      readOnly
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="comentarios" className="form-label">Comentarios</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="comentarios"
-                      value={comentarios}
-                      onChange={(e) => setComentarios(e.target.value)}
-                      placeholder="Escribe tu comentario"
-                      required
-                    />
-                  </div>
+                 
                   <div className="text-center">
-                    <button type="submit" className="btn btn-warning">Comenta</button>
-                    <Link to="/main" className="footer-link ms-2">
+                  
+                    <Link to="/mainAdministrador" className="footer-link ms-2">
                       <button type="button" className="btn btn-warning">Ver Comentarios</button>
                     </Link>
                   </div>
+
                 </form>
               </div>
             </div>

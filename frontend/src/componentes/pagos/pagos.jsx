@@ -226,10 +226,13 @@ const Pagos = () => {
                     <span className="nav-link text-white">Hola {userName} {userlastName}❤</span>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link text-white" href="#" data-toggle="modal" data-target="#debtDetailModal">Ver Pagos ${totalDebt.toFixed(2)}</a>
+                  <Link to="/" className="nav-link text-white">Usuario</Link>
                   </li>
                   <li className="nav-item">
-                  <Link to="/" className="nav-link text-white">Regresar</Link>
+                    <a className="nav-link text-white" >Ver Pagos ${totalDebt.toFixed(2)}</a>
+                  </li>
+                  <li className="nav-item">
+                  <Link to="/mainAdministrador" className="nav-link text-white">Regresar</Link>
                   </li>
                 </>
               ) : (
