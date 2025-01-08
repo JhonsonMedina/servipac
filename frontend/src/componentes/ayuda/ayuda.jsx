@@ -96,7 +96,7 @@ function Ayuda() {
                   </li>
                 
                   <li className="nav-item">
-                    <Link to="/pagos" className="nav-link text-white">Pagos</Link>
+                    <Link to="/productosAgregados" className="nav-link text-white">Pagos</Link>
                   </li>
                   <li className="nav-item">
                     <Link to="/" className="nav-link text-white">Regresar</Link>

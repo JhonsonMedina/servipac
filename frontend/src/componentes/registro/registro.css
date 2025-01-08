@@ -19,4 +19,14 @@
     margin-bottom: 30px;
 }
 
+.close-button{
+    margin-left: 480px;
+    border-radius: 50px;
+    background-color:#066e4f ;
+    width: 20px;
+}
+
+.close-button:hover{
+    color: white;
+}
 

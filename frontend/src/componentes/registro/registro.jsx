@@ -7,7 +7,7 @@ function Registro() {
 
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [direction , setDirection] = useState('');
+  const [direction, setDirection] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -28,7 +28,7 @@ function Registro() {
     const isValid =
       name &&
       lastName &&
-      direction&&
+      direction &&
       email &&
       password &&
       confirmPassword &&
@@ -36,7 +36,7 @@ function Registro() {
       acceptTerms;
 
     setIsFormValid(isValid);
-  }, [name, lastName,direction,  email, password, confirmPassword, passwordError, acceptTerms]);
+  }, [name, lastName, direction, email, password, confirmPassword, passwordError, acceptTerms]);
 
   const handleSubmit = () => {
     if (!isFormValid) {
@@ -71,7 +71,7 @@ function Registro() {
         console.log(data);
         if (data.msg === 'Usuario creado correctamente') {
           alert('Registro exitoso');
-          navigate('/');
+          navigate('/login');
         }
       })
       .catch((error) => {
@@ -118,11 +118,10 @@ function Registro() {
               id="direction"
               type="text"
               className="form-control"
-              placeholder="direccion"
+              placeholder="Dirección"
               onChange={(e) => setDirection(e.target.value)}
             />
           </div>
-
 
           <div className="mb-3">
             <input
